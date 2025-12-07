@@ -289,24 +289,18 @@
                     </executions>
                 </plugin>
 
+
+
                 <plugin>
-                    <groupId>org.gaul</groupId>
-                    <artifactId>modernizer-maven-plugin</artifactId>
-                    <version>${modernizer-maven-plugin.version}</version>
-                    <executions>
-                        <execution>
-                            <id>modernizer</id>
-                            <phase>test-compile</phase>
-                            <goals>
-                                <goal>modernizer</goal>
-                            </goals>
-                        </execution>
-                    </executions>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.13.0</version>
                     <configuration>
-                        <javaVersion>${java.version}</javaVersion>
-                        <includeTestClasses>false</includeTestClasses>
+                        <release>${java.version}</release>
+                        <encoding>${project.build.sourceEncoding}</encoding>
                     </configuration>
                 </plugin>
+
 
                 <plugin>
                     <groupId>com.github.spotbugs</groupId>
